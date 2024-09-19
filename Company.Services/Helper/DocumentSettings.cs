@@ -11,7 +11,7 @@ namespace Company.Services.Helper
     {
         public static string UploadFile(IFormFile file ,string folderName )
         {
-            //1.get folder path 
+            //1.get folder path  
          
             var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\Files", folderName);
 
