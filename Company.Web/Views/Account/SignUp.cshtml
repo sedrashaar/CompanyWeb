@@ -1,4 +1,4 @@
-﻿
+﻿@model SignUpViewModel
 @{
     ViewData["Title"] = "SignUp";
     Layout = "~/Views/Shared/_AuthLayout.cshtml";
@@ -6,41 +6,55 @@
 
 <h1>SignUp</h1>
 
-		<form class="login100-form validate-form">
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+<form method="post" asp-action="SignUp">
 			<span class="login100-form-logo">
 				<i class="zmdi zmdi-landscape"></i>
 			</span>
 
 			<span class="login100-form-title p-b-34 p-t-27">
-				Log in
+				Sign In
 			</span>
 
-			<div class="wrap-input100 validate-input" data-validate = "Enter username">
-				<input class="input100" type="text" name="username" placeholder="Username">
-				<span class="focus-input100" data-placeholder="&#xf207;"></span>
-			</div>
+    <input class="input100 form-control" type="text" asp-for="FirstName" placeholder="FirstName"  />
+    <span class="focus-input100" data-placeholder="&#xf207;" asp-validation-for=" FirstName"></span>
+    <br/>
 
-			<div class="wrap-input100 validate-input" data-validate="Enter password">
-				<input class="input100" type="password" name="pass" placeholder="Password">
-				<span class="focus-input100" data-placeholder="&#xf191;"></span>
-			</div>
 
-			<div class="contact100-form-checkbox">
-				<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-				<label class="label-checkbox100" for="ckb1">
-					Remember me
-				</label>
-			</div>
+    <input class="input100 form-control" type="text" asp-for="LastName" placeholder="LastName"  />
+    <span class="focus-input100" data-placeholder="&#xf191;" asp-validation-for="LastName"></span>
+    <br/>
 
-			<div class="container-login100-form-btn">
-				<button class="login100-form-btn">
-					Login
-				</button>
-			</div>
 
-			<div class="text-center p-t-90">
-				<a class="txt1" href="#">
-					Forgot Password?
-				</a>
-			</div>
-		</form>
+    <input class="input100 form-control" type="email" asp-for="Email" placeholder="Email" />
+    <span class="focus-input100" data-placeholder="&#xf207;" asp-validation-for="Email"></span>
+    <br/>
+
+    <input class="input100 form-control" type="password" asp-for="Password" placeholder="Password"  />
+    <span asp-validation-for="Password" class="focus-input100" data-placeholder="&#xf207;" asp-validation-for="Password"></span>
+    <br/>
+
+
+    <input class="input100 form-control" type="password" asp-for="ConfirmPassword" placeholder="Confirm Password" />
+    <span class="focus-input100" data-placeholder="&#xf207;" asp-validation-for="ConfirmPassword"></span>
+    <br/>
+
+    <div class="wthree-text">
+        <label class="anim">
+            <input type="checkbox" required>
+            <span>I Agree To The Terms & Conditions</span>
+        </label>
+        <div class="clear"></div>
+    </div>
+
+	<div style="display: flex; justify-content: center; align-items: center; height: 6vh;">
+		<input type="submit" value="SignUp" class="btn btn-secondary">
+	</div>
+</form>
+	
+<p class="text-white">Do You Have An Account?
+	<a asp-action="Login" class="text-black">Login Now!</a>
+</p>
+
+		

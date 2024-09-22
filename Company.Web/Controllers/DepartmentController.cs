@@ -3,10 +3,12 @@ using Company.Repository.Interfaces;
 using Company.Repository.Repositories;
 using Company.Services.Interfaces;
 using Company.Services.Interfaces.Department.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Company.Web.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         private readonly IDepartmentService _departmentService;
@@ -39,7 +41,7 @@ namespace Company.Web.Controllers
                 {
                     _departmentService.Add(DepartmentDto);
                     TempData["TextTempMessage"] = "Hello From Employee Index (TempData)";
-                    return RedirectToAction(nameof(Index)); 
+                    return RedirectToAction(nameof(Index)); //subsequent
                 }
                 ModelState.AddModelError("DepartmentError", "ValidationError");
                 return View(DepartmentDto);
@@ -91,6 +93,6 @@ namespace Company.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-     
+        // bahwl 3la ad m'dar ani el controller bykonsh maktob feh haga
     }
 }

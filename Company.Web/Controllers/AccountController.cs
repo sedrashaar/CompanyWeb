@@ -30,7 +30,7 @@ namespace Company.Web.Controllers
             {
                 var user = new ApplicationUser
                 {
-                    UserName = input.Email.Split("@")[0],
+                    UserName = input.Email.Split("@")[0],// kda hakhleh yakhod bs el asm mn email ay haga abl el @
                     Email = input.Email,
                     FirstName = input.FirstName,
                     LastName = input.LastName,
@@ -39,7 +39,7 @@ namespace Company.Web.Controllers
                 var result = await _userManager.CreateAsync(user, input.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("SignIn");
+                    return RedirectToAction("Login");
                 }
                 foreach(var error in result.Errors)
                 {
@@ -49,7 +49,7 @@ namespace Company.Web.Controllers
 
             return View(input);
         }
-       
+        // haygeli feha el data ali el mafrod ttdaf lluser pass, name 
 		#endregion
 
 		#region Login
@@ -154,5 +154,11 @@ namespace Company.Web.Controllers
             }
             return View(input);
         }
+
+        public IActionResult AccessDenied() 
+        {
+            return View();
+        }
+
     }
 }

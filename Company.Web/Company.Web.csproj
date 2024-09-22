@@ -17,11 +17,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Account\AccessDenied.cshtml" />
+    <None Include="Views\Account\CheckYourIndex.cshtml" />
+    <None Include="Views\Account\ForgetPassword.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\ResetPassword.cshtml" />
+    <None Include="Views\Account\SignUp.cshtml" />
     <None Include="Views\Employee\Create.cshtml" />
     <None Include="Views\Employee\Delete.cshtml" />
     <None Include="Views\Employee\Details.cshtml" />
     <None Include="Views\Employee\Index.cshtml" />
     <None Include="Views\Employee\Update.cshtml" />
+    <None Include="Views\Role\AddorRemoveUsers.cshtml" />
+    <None Include="Views\Role\Create.cshtml" />
+    <None Include="Views\Role\Details.cshtml" />
+    <None Include="Views\Role\Index.cshtml" />
+    <None Include="Views\Role\PartialViews\CreateEditPartialView.cshtml" />
+    <None Include="Views\Role\PartialViews\DetailsDeletePartialView.cshtml" />
+    <None Include="Views\Role\Update.cshtml" />
+    <None Include="Views\User\Delete.cshtml" />
+    <None Include="Views\User\Details.cshtml" />
+    <None Include="Views\User\Index.cshtml" />
+    <None Include="Views\User\Update.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
